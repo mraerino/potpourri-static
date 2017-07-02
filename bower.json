@@ -1,0 +1,15 @@
+{
+  "name": "potpourri-static",
+  "authors": [
+    "Marcus Weiner <marcus.weiner@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

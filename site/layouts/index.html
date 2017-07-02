@@ -1,5 +1,15 @@
 {{ partial "header" . }}
 
-<h1>This will be the new potpourri festival site</h1>
+<img class="logo" src="/images/theme/logo.png" />
+
+{{ .Content }}
+
+<div class="row section-wrapper" id="sections">
+{{ range $.Site.Home.Sections }}
+    <a class="section column column-40" href="{{ .URL }}" style="background-image: url({{ .Params.cover | default "none" | safeCSS }})">
+        {{ .Title }}
+    </a>
+{{ end }}
+</div>
 
 {{ partial "footer" . }}

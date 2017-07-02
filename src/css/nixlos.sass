@@ -1,0 +1,74 @@
+&
+  background-repeat: no-repeat
+  background-position: top left,bottom right
+  background-image: url("/images/nixlos/DSC_6157_edit_web.jpg"),url("/images/nixlos/wasserfarben.jpg")
+  background-color: #fff
+  background-size: auto 100vh, 30%
+  hyphens: auto
+  word-wrap: break-word
+
+a, a:active, a:visited
+  color: #111
+  text-decoration: none
+  border-bottom: 1px solid #111
+
+#content
+  color: #111
+  max-width: 600px
+  padding: 30px 20px
+  margin: auto
+  text-align: center
+  z-index: 20
+
+p, h2
+  text-align: left
+
+p
+  margin: 1.5em auto
+
+.box
+  border: 5px #7DCDC5 solid
+  width: 650px
+  margin-left: -50px
+  padding: 20px
+
+  img
+    float: left
+    margin-right: 20px
+    width: 300px
+
+  h2
+    font-size: 25px
+    font-weight: bold
+
+  p
+    margin: 0
+
+.logo
+  width: 150px
+  height: 150px
+  margin: auto
+  display: block
+  padding: 7px
+  margin-bottom: 100px
+
+.logo:hover
+  background-color: #FFDF02
+
+@media only screen and (max-width: 700px)
+
+  &
+    background-size: 70%
+
+  .hide-small
+    display: none
+
+  .logo
+    margin: auto
+
+  .box
+    border-width: 5px 0px
+    width: 100%
+    margin-left: -20px
+    padding: 20px
+

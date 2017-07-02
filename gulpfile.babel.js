@@ -4,6 +4,7 @@ import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
 import cssnext from "postcss-cssnext";
 import BrowserSync from "browser-sync";
+import sass from "gulp-sass";
 
 const browserSync = BrowserSync.create();
 const hugoBin = "hugo";
@@ -16,7 +17,8 @@ gulp.task("build", ["css", "hugo"]);
 gulp.task("build-preview", ["css", "hugo-preview"]);
 
 gulp.task("css", () => (
-  gulp.src("./src/css/*.css")
+  gulp.src("./src/css/main.sass")
+    .pipe(sass())
     .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext()]))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
@@ -28,7 +30,7 @@ gulp.task("server", ["hugo", "css"], () => {
       baseDir: "./dist"
     }
   });
-  gulp.watch("./src/css/**/*.css", ["css"]);
+  gulp.watch("./src/css/**/*.{css,sass}", ["css"]);
   gulp.watch("./site/**/*", ["hugo"]);
 });
 
