@@ -1,7 +1,8 @@
 ---
 title: Nixlos
 weight: 2
-cover: /images/covers/nixlos.png
+cover: /images/covers/nixlos.jpg
+description: Wir haben ein Jugendkulturmagazin an den Start gebracht
 ---
 
 ![Nixlos Magazin](/images/nixlos/nixlos_magazin_black_web.png)

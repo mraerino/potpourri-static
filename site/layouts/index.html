@@ -2,12 +2,22 @@
 
 <img class="logo" src="/images/theme/logo.png" />
 
-{{ .Content }}
+<div class="teaser">
+    {{ .Content }}
+</div>
+
+<h2>Über uns</h2>
 
 <div class="row section-wrapper" id="sections">
 {{ range $.Site.Home.Sections }}
-    <a class="section column column-40" href="{{ .URL }}" style="background-image: url({{ .Params.cover | default "none" | safeCSS }})">
-        {{ .Title }}
+    <a class="section column column-40" href="{{ .URL }}">
+        <div class="content">
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Description }}</p>
+        </div>
+        <div class="bg" style="background-image: url({{ .Params.cover | default "none" | safeCSS }})">
+            <div class="shade"></div>
+        </div>
     </a>
 {{ end }}
 </div>
