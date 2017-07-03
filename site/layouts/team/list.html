@@ -1,0 +1,11 @@
+{{ partial "header" . }}
+
+{{ .Content }}
+
+<ul>
+{{ range sort .Site.Data.team.people }}
+    <li>{{ . }}</li>
+{{ end }}
+</ul>
+
+{{ partial "footer" . }}
