@@ -1,7 +1,9 @@
 <header>
+    {{ if not .IsHome }}
     <a href="/" title="Startseite">
         <img class="logo" src="/images/theme/logo.png"/>
     </a>
+    {{ end }}
     <nav>
         {{ range $.Site.Home.Sections }}
         <a href="{{ .URL }}" title="{{ .UniqueID }}"
