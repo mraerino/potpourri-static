@@ -1,17 +1,19 @@
 {{ partial "header" . }}
 
-<img class="logo" src="/images/theme/logo.png" />
+<article id="content" class="container">
+    <img class="logo" src="/images/theme/logo.png" />
 
-<div class="teaser">
-    {{ .Content }}
-</div>
+    <div class="teaser">
+        {{ .Content }}
+    </div>
 
-<h2>Über uns</h2>
+    <h2>Über uns</h2>
 
-<div class="row box-wrapper" id="sections">
-{{ range $.Site.Home.Sections }}
-    {{ partial "section-box" . }}
-{{ end }}
-</div>
+    <div class="row box-wrapper" id="sections">
+        {{ range $.Site.Home.Sections }}
+        {{ partial "section-box" . }}
+        {{ end }}
+    </div>
+</article>
 
 {{ partial "footer" . }}

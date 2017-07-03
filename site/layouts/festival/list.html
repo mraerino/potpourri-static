@@ -1,15 +1,18 @@
 {{ partial "header" . }}
 
-<h1>{{ .Title }}</h1>
+<article id="content" class="container">
+    <h1>{{ .Title }}</h1>
 
-{{ .Content }}
+    {{ .Content }}
 
-<h2>Rückblicke</h2>
+    <h2>Rückblicke</h2>
 
-<div class="box-wrapper row">
-{{ range $.Pages }}
-    {{ partial "section-box" . }}
-{{ end }}
-</div>
+    <div class="box-wrapper row">
+    {{ range $.Pages }}
+        {{ partial "section-box" . }}
+    {{ end }}
+    </div>
+
+</article>
 
 {{ partial "footer" . }}

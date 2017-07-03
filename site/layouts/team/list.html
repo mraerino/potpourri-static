@@ -1,11 +1,14 @@
 {{ partial "header" . }}
 
-{{ .Content }}
+<article id="content" class="container">
+    {{ .Content }}
 
-<ul>
-{{ range sort .Site.Data.team.people }}
-    <li>{{ . }}</li>
-{{ end }}
-</ul>
+    <ul>
+    {{ range sort .Site.Data.team.people }}
+        <li>{{ . }}</li>
+    {{ end }}
+    </ul>
+
+</article>
 
 {{ partial "footer" . }}
