@@ -1,0 +1,14 @@
+<header>
+    <a href="/" title="Startseite">
+        <img class="logo" src="/images/theme/logo.png"/>
+    </a>
+    <nav>
+        {{ range $.Site.Home.Sections }}
+        <a href="{{ .URL }}" title="{{ .UniqueID }}"
+           {{ if eq $.Section .Section }}class="active"{{ end }}
+        >
+            {{ .Title }}
+        </a>
+        {{ end }}
+    </nav>
+</header>
