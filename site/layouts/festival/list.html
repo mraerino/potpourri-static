@@ -1,0 +1,15 @@
+{{ partial "header" . }}
+
+<h1>{{ .Title }}</h1>
+
+{{ .Content }}
+
+<h2>Rückblicke</h2>
+
+<div class="box-wrapper row">
+{{ range $.Pages }}
+    {{ partial "section-box" . }}
+{{ end }}
+</div>
+
+{{ partial "footer" . }}

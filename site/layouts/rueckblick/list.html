@@ -1,9 +1,0 @@
-{{ partial "header" . }}
-
-{{ range $.Pages }}
-    <a class="year" style="display: block;" href="{{ .URL }}">
-        {{ .Title }}
-    </a>
-{{ end }}
-
-{{ partial "footer" . }}
