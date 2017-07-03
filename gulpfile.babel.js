@@ -5,6 +5,7 @@ import cssImport from "postcss-import";
 import cssnext from "postcss-cssnext";
 import BrowserSync from "browser-sync";
 import sass from "gulp-sass";
+import favicon from "gulp-favicons";
 
 const browserSync = BrowserSync.create();
 const hugoBin = "hugo";
@@ -13,8 +14,8 @@ const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
 
-gulp.task("build", ["css", "hugo"]);
-gulp.task("build-preview", ["css", "hugo-preview"]);
+gulp.task("build", ["css", "favicon", "hugo"]);
+gulp.task("build-preview", ["css", "favicon", "hugo-preview"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/main.sass")
@@ -22,6 +23,16 @@ gulp.task("css", () => (
     .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext()]))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
+));
+
+gulp.task("favicon", () => (
+  gulp.src("./src/images/favicon.png")
+    .pipe(favicon({
+      icons: {
+        appleStartup: false,         // Create Apple startup images. `boolean` or `{ offset, background }`
+      }
+    }))
+    .pipe(gulp.dest("./dist"))
 ));
 
 gulp.task("server", ["hugo", "css"], () => {
